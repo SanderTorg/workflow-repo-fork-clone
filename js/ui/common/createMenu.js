@@ -3,6 +3,12 @@ import { isActivePath } from "../../utils/userInterface.js";
 
 export function createMenu() {
   const container = document.querySelector("#menu-container");
+  if (!container) {
+    console.warn(
+      "createMenu: #menu-container not found. Menu will not be rendered."
+    );
+    return;
+  }
   const currentPath = window.location.pathname;
   const username = getUsername();
 
